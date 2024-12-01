@@ -1,22 +1,36 @@
 #!/bin/bash
 #
-# SPDX-FileCopyrightText: 2016 The CyanogenMod Project
-# SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2020 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# If we're being sourced by the common script that we called,
-# stop right here. No need to go down the rabbit hole.
-if [ "${BASH_SOURCE[0]}" != "${0}" ]; then
-    return
-fi
-
 set -e
 
-export DEVICE=PL2
-export DEVICE_COMMON=sdm660-common
-export VENDOR=nokia
-export VENDOR_COMMON=${VENDOR}
+DEVICE=zeon_sprout
+VENDOR=sharp
 
-"./../../${VENDOR_COMMON}/${DEVICE_COMMON}/setup-makefiles.sh" "$@"
+# Load extract_utils and do some sanity checks
+MY_DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
+
+ANDROID_ROOT="${MY_DIR}/../../.."
+
+HELPER="${ANDROID_ROOT}/tools/extract-utils-old/extract_utils.sh"
+if [ ! -f "${HELPER}" ]; then
+    echo "Unable to find helper script at ${HELPER}"
+    exit 1
+fi
+source "${HELPER}"
+
+# Initialize the helper
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
+
+# Warning headers and guards
+write_headers
+
+write_makefiles "${MY_DIR}/proprietary-files.txt" true
+
+# Finish
+write_footers

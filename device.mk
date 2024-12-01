@@ -14,10 +14,10 @@
 # limitations under the License.
 
 # Vendor blobs
-$(call inherit-product, vendor/nokia/PL2/PL2-vendor.mk)
+$(call inherit-product, vendor/sharp/zeon_sprout/zeon_sprout-vendor.mk)
 
 # Set Shipping API level
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -35,7 +35,7 @@ TARGET_SCREEN_WIDTH := 1080
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # GMS
-PRODUCT_GMS_CLIENTID_BASE := android-hmd
+PRODUCT_GMS_CLIENTID_BASE := android-sharp
 
 # Init
 PRODUCT_PACKAGES += \
@@ -62,4 +62,4 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
 
 # Inherit from nokia sdm660-common
-$(call inherit-product, device/nokia/sdm660-common/common.mk)
+$(call inherit-product, device/sharp/msm8953-common/msm8953.mk)

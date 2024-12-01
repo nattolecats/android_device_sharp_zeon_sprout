@@ -1,1 +1,1 @@
-require board=sdm630|B2N|PL2
+require board=Anakis|msm8953|zeon_sprout

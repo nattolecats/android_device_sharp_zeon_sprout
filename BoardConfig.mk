@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/nokia/PL2
+DEVICE_PATH := device/sharp/zeon_sprout
 
-# Inherit from nokia sdm660-common
--include device/nokia/sdm660-common/BoardConfigCommon.mk
+# Inherit from sharp msm8953-common
+-include device/sharp/msm8953-common/BoardConfigCommon.mk
 
 # Architecture
 TARGET_CPU_VARIANT_RUNTIME := cortex-a53
@@ -25,18 +25,32 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
 # Assertions
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
-TARGET_OTA_ASSERT_DEVICE := PL2,PL2_sprout,Plate2
+TARGET_OTA_ASSERT_DEVICE := zeon_sprout
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm630
 
 # Display
-TARGET_SCREEN_DENSITY := 420
+TARGET_SCREEN_DENSITY := 480
+
+# Kernel - prebuilt
+TARGET_FORCE_PREBUILT_KERNEL := true
+ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)-kernel/kernel
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)-kernel/dtb.img
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+BOARD_INCLUDE_DTB_IN_BOOTIMG := 
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img
+BOARD_KERNEL_SEPARATED_DTBO := 
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_DTBTOOL_ARGS := --force-v3
+endif
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 22011707392
+BOARD_PRODUCTIMAGE_PARTITION_SIZE := 268435456
 BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
 BOARD_FLASH_BLOCK_SIZE := 262144
 
@@ -48,4 +62,4 @@ SELINUX_IGNORE_NEVERALLOWS := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Inherit from the proprietary version
-include vendor/nokia/PL2/BoardConfigVendor.mk
+include vendor/sharp/zeon_sprout/BoardConfigVendor.mk

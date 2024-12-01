@@ -2,10 +2,17 @@
 ## are from PL2_sprout (QKQ1.190828.002).
 
 # Audio (Configs)
-vendor/etc/audio_platform_info_pl2.xml
-vendor/etc/audio_platform_info_pl2_cn.xml
-vendor/etc/mixer_paths_pl2.xml
-vendor/etc/mixer_paths_pl2_cn.xml
+vendor/etc/audio_platform_info_tasha.xml
+vendor/etc/audio_platform_info_tashalite.xml
+vendor/etc/audio_platform_info_intcodec.xml
+vendor/etc/audio_platform_info_sku4.xml
+vendor/etc/audio_platform_info_sku3_tasha.xml
+vendor/etc/mixer_paths_sku3_tasha.xml
+vendor/etc/mixer_paths_tashalite.xml
+vendor/etc/mixer_paths_tasha.xml
+vendor/etc/mixer_paths_sku4.xml
+vendor/etc/mixer_paths.xml
+vendor/etc/mixer_paths_mtp.xml
 
 # Audio (ACDB)
 vendor/etc/acdbdata/PL2/sdm660-snd-card-pl2/Bluetooth_cal.acdb|2f6b241fbf14bf90dc735cf5d6aaf8a4ea9520c2
@@ -15,10 +22,6 @@ vendor/etc/acdbdata/PL2/sdm660-snd-card-pl2/Handset_cal.acdb|fce7a2cda9a1024da22
 vendor/etc/acdbdata/PL2/sdm660-snd-card-pl2/Hdmi_cal.acdb|6d931363b6c90b31feedbbb6853310bc98796d9f
 vendor/etc/acdbdata/PL2/sdm660-snd-card-pl2/Headset_cal.acdb|73c75c381f72232caf2dcd0ff0b2cdbf49a83267
 vendor/etc/acdbdata/PL2/sdm660-snd-card-pl2/Speaker_cal.acdb|3c34deafa8074d5c32ad6b73c1df1578a5b97a72
-
-# Audio (Firmware - TFA9891)
-vendor/firmware/TFA9891_pl2.cnt
-vendor/firmware/TFA9891_pl2.ini
 
 # Camera - from Nokia/Plate2_00WW/PL2_sprout:10/QKQ1.190828.002/00WW_4_15C:user/release-keys
 vendor/etc/camera/s5k3p3_chromatix.xml|013361232789744196231d7293e482acb3d4c7c5
@@ -130,35 +133,37 @@ vendor/etc/PL2/ncf/rear/ISO800_3200x2400.ncf|60d16ae00b5ddef7fe40f148bf7c3453a7f
 vendor/etc/PL2/ncf/rear/ISO800_3840x2160.ncf|a8d1d54a15c99b668d687be87108ca56dbc9a3a0
 vendor/etc/PL2/ncf/rear/ISO800_4608x3456.ncf|ec7cfbcaef445e15ea7545ec128ea61fcb4e1067
 
-# Fingerprint (Elan)
-vendor/lib64/hw/fingerprint.elan.so
-
-# Fingerprint (Firmware - Elan)
-vendor/firmware/elanfp64.b00
-vendor/firmware/elanfp64.b01
-vendor/firmware/elanfp64.b02
-vendor/firmware/elanfp64.b03
-vendor/firmware/elanfp64.b04
-vendor/firmware/elanfp64.b05
-vendor/firmware/elanfp64.b06
-vendor/firmware/elanfp64.b07
-vendor/firmware/elanfp64.mdt
-
-# Graphics (Firmware - Focaltech)
-vendor/firmware/TP_Firmware_FT8716_PL2.bin
-
-# NFC
-vendor/etc/nfcee_access.xml
-
-# NFC (Firmware - NXP)
-vendor/lib/libpn553_fw.so
-
-# NFC (Firmware - Samsung)
-vendor/etc/sec_s3nrn81_rfreg.bin
-vendor/firmware/sec_s3nrn81_firmware.bin
-
 # Sensor (Configs)
-vendor/etc/sensors/sensor_def_qcomdev_pl2.conf
+vendor/etc/sensors/sensor_def_qcomdev.conf
 
 # Thermal
-vendor/etc/thermal-engine-PL2.conf
+vendor/etc/thermal-engine.conf
+
+# Firmware
+vendor/firmware/a506_zap.b00
+vendor/firmware/a506_zap.b01
+vendor/firmware/a506_zap.b02
+vendor/firmware/a506_zap.elf
+vendor/firmware/a506_zap.mdt
+vendor/firmware/a530_gpmu.fw2
+vendor/firmware/a530_pfp.fw
+vendor/firmware/a530_pm4.fw
+vendor/firmware/a530v1_pfp.fw
+vendor/firmware/a530v1_pm4.fw
+vendor/firmware/a530v2_seq.fw2
+vendor/firmware/a530v3_gpmu.fw2
+vendor/firmware/a530v3_seq.fw2
+vendor/firmware/a540_gpmu.fw2
+vendor/firmware/cpp_firmware_v1_10_0.fw
+vendor/firmware/cpp_firmware_v1_12_0.fw
+vendor/firmware/cpp_firmware_v1_12_1.fw
+vendor/firmware/cpp_firmware_v1_1_1.fw
+vendor/firmware/cpp_firmware_v1_1_6.fw
+vendor/firmware/cpp_firmware_v1_2_0.fw
+vendor/firmware/cpp_firmware_v1_4_0.fw
+vendor/firmware/cpp_firmware_v1_5_0.fw
+vendor/firmware/cpp_firmware_v1_5_1.fw
+vendor/firmware/cpp_firmware_v1_5_2.fw
+vendor/firmware/cpp_firmware_v1_6_0.fw
+vendor/firmware/cpp_firmware_v1_8_0.fw
+#vendor/firmware/cxd224x_firmware.bin
