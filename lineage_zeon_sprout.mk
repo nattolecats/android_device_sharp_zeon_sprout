@@ -12,6 +12,8 @@ PRODUCT_MANUFACTURER := SHARP
 PRODUCT_MODEL := S5-SH
 PRODUCT_NAME := lineage_zeon_sprout
 
+TARGET_USES_MINI_GAPPS := true
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="S5-user 11 S2014 03.00.00 release-keys" \
     BuildFingerprint=SG/S5/zeon_sprout:11/S2014/03.00.00:user/release-keys \
