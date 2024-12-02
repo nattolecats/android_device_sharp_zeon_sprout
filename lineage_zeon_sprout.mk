@@ -13,6 +13,7 @@ PRODUCT_MODEL := S5-SH
 PRODUCT_NAME := lineage_zeon_sprout
 
 TARGET_USES_PICO_GAPPS := true
+TARGET_INCLUDE_EXTRA_APPS := false
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="S5-user 11 S2014 03.00.00 release-keys" \
