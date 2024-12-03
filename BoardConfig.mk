@@ -58,6 +58,7 @@ PRODUCT_VENDOR_MOVE_ENABLED := true
 # SELinux
 SELINUX_IGNORE_NEVERALLOWS := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Inherit from the proprietary version
 include vendor/sharp/zeon_sprout/BoardConfigVendor.mk
