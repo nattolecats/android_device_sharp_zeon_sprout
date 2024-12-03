@@ -6,6 +6,10 @@
 
 DEVICE_PATH := device/sharp/zeon_sprout
 
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_INCORRECT_PARTITION_IMAGES := true
+
 # Inherit from common msm8953-common
 include device/sharp/msm8953-common/BoardConfigCommon.mk
 
@@ -24,6 +28,7 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 
 # A/B
+AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
     system \
